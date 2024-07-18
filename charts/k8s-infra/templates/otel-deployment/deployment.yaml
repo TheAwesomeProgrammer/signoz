@@ -95,7 +95,7 @@ spec:
             - name: OTEL_RESOURCE_ATTRIBUTES
               value: signoz.component=$(SIGNOZ_COMPONENT),k8s.cluster.name=$(K8S_CLUSTER_NAME)
             {{- range .Values.otelDeployment.additionalEnvs }}
-            - {{ . | toYaml }}
+            {{- . | toYaml | nindent 12 -}}
             {{- end }}
           volumeMounts:
             - name: otel-deployment-config-vol
