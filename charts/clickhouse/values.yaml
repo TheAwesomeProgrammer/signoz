@@ -487,6 +487,9 @@ clickhouseOperator:
     # If not set and create is true, a name is generated using the fullname template
     name:
 
+  # -- Clickhouse Operator deployment annotations
+  annotations: {}
+
   # -- Clickhouse Operator pod(s) annotation.
   podAnnotations: {}
     # signoz.io/port: '8888'
