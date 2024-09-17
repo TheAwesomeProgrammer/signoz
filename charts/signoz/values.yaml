@@ -601,7 +601,7 @@ queryService:
   image:
     registry: docker.io
     repository: signoz/query-service
-    tag: 0.53.0
+    tag: 0.54.0
     pullPolicy: IfNotPresent
 
   # -- Image Registry Secret Names for Query-Service
@@ -831,7 +831,7 @@ frontend:
   image:
     registry: docker.io
     repository: signoz/frontend
-    tag: 0.53.0
+    tag: 0.54.0
     pullPolicy: IfNotPresent
 
   # -- Image Registry Secret Names for Frontend
@@ -1267,7 +1267,7 @@ schemaMigrator:
   image:
     registry: docker.io
     repository: signoz/signoz-schema-migrator
-    tag: 0.102.7
+    tag: 0.102.8
     pullPolicy: IfNotPresent
 
   args: {}
@@ -1383,7 +1383,7 @@ otelCollector:
   image:
     registry: docker.io
     repository: signoz/signoz-otel-collector
-    tag: 0.102.7
+    tag: 0.102.8
     pullPolicy: IfNotPresent
 
   # -- Image Registry Secret Names for OtelCollector
@@ -1755,6 +1755,8 @@ otelCollector:
 
     autoscalingTemplate: []
     keda:
+      annotations:
+        "helm.sh/hook-weight": "4"
       enabled: false
       pollingInterval: "30"   # check 30sec periodically for metrics data
       cooldownPeriod: "300"   # once the load decreased, it will wait for 5 min and downscale
@@ -2010,7 +2012,7 @@ otelCollectorMetrics:
   image:
     registry: docker.io
     repository: signoz/signoz-otel-collector
-    tag: 0.102.7
+    tag: 0.102.8
     pullPolicy: IfNotPresent
 
   # -- Image Registry Secret Names for OtelCollector
