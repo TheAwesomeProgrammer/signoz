@@ -65,9 +65,9 @@ spec:
           args:
           - "job"
           {{- if .Release.IsInstall }}
-          - "{{ include "schemaMigrator.fullname" . }}-init"
+          - "{{ include "schemaMigrator.fullname" . }}-sync-init"
           {{- else }}
-          - "{{ include "schemaMigrator.fullname" . }}-upgrade"
+          - "{{ include "schemaMigrator.fullname" . }}-sync"
           {{- end }}
         {{- end }}
         {{- if .Values.otelCollector.initContainers.init.enabled }}
